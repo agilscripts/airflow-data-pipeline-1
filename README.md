@@ -1,9 +1,6 @@
-### README.md
-
-```markdown
 # Data Pipelines with Apache Airflow
 
-This project builds data pipelines using Apache Airflow to process music streaming data for Sparkify. The goal is to load data from S3 to Redshift and check its quality.
+This project builds data pipelines using Apache Airflow to process music streaming data for Sparkify.
 
 ### Project Files
 
