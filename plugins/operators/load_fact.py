@@ -19,15 +19,12 @@ class LoadFactOperator(BaseOperator):
         """
         Executes the task of loading the fact table in Redshift using a SQL query
         """
-        # Creating the PostgresHook instance to connect to Redshift
         redshift_hook = PostgresHook(postgres_conn_id=self.redshift_conn_id)
 
         self.log.info("Loading songplays fact table")
-
-        # Get the SQL query from SqlQueries class
+        
         sql_query = sql_queries.songplay_table_insert
 
-        # Execute the SQL query using the redshift_hook
         redshift_hook.run(sql_query)
 
         self.log.info("Songplays fact table loaded successfully.")
