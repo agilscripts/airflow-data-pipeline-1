@@ -3,7 +3,6 @@ import pendulum
 import os
 import sys
 
-# Hard-code the path to your plugins folder
 plugins_path = "/Users/audrey/IdeaProjects/cd12380-data-pipelines-with-airflow-11/plugins"
 if plugins_path not in sys.path:
     sys.path.append(plugins_path)
