@@ -1,5 +1,3 @@
-Sure! Here's a simpler and shorter version of the README file:
-
 ### README.md
 
 ```markdown
