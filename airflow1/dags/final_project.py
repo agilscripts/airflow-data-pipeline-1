@@ -1,15 +1,24 @@
 from datetime import datetime, timedelta
 import pendulum
 import os
-from airflow.decorators import dag
-from airflow.operators.dummy import DummyOperator
+import sys
+
+# Hard-code the path to your plugins folder
+plugins_path = "/Users/audrey/IdeaProjects/cd12380-data-pipelines-with-airflow-11/plugins"
+if plugins_path not in sys.path:
+    sys.path.append(plugins_path)
+
 from plugins.operators import (
     StageToRedshiftOperator,
     LoadFactOperator,
     LoadDimensionOperator,
     DataQualityOperator
 )
-from helpers import SqlQueries
+from plugins.udacity_helpers import SqlQueries
+
+from airflow.decorators import dag
+from airflow.operators.dummy import DummyOperator
+
 
 default_args = {
     'owner': 'udacity',
