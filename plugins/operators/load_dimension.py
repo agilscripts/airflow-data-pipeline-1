@@ -31,12 +31,10 @@ class LoadDimensionOperator(BaseOperator):
 
         self.log.info(f"Loading data into {self.table_name} table from SQL")
 
-        # If not in append mode, truncate the target table before loading data
         if not self.append_mode:
             self.log.info(f"Truncating {self.table_name} table before loading new data.")
             redshift_hook.run(f"TRUNCATE TABLE {self.table_name}")
 
-        # Run the SQL query to load data
         self.log.info(f"Running SQL query: {self.sql_query}")
         redshift_hook.run(self.sql_query)
 
