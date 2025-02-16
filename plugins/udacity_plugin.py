@@ -1,6 +1,5 @@
 from airflow.plugins_manager import AirflowPlugin
 
-# Relative imports (the dot `.` means "this same package/folder")
 from .operators.stage_redshift import StageToRedshiftOperator
 from .operators.load_fact import LoadFactOperator
 from .operators.load_dimension import LoadDimensionOperator

@@ -2,7 +2,7 @@ from datetime import timedelta
 import pendulum
 import os
 import sys
-# Ensure Airflow finds the plugins folder
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "../plugins")))
 
 # Import operators from plugins folder
