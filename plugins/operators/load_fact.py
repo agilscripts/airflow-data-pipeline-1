@@ -1,7 +1,10 @@
 from airflow.providers.postgres.hooks.postgres import PostgresHook
 from airflow.models import BaseOperator
 from airflow.utils.decorators import apply_defaults
-from plugins.udacity_helpers import sql_queries
+
+from ..udacity_helpers import sql_queries
+from ..udacity_helpers.sql_queries import SqlQueries
+
 
 class LoadFactOperator(BaseOperator):
 
